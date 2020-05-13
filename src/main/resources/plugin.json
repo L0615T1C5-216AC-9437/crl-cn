@@ -1,0 +1,7 @@
+{
+  "name": "crl",
+  "author": "L0615T1C5.216AC:9437 [Impact Phd]",
+  "main": "crl.Main",
+  "description": "command rate limit",
+  "version": 104
+}
