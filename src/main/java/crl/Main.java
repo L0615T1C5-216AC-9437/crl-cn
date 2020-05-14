@@ -26,8 +26,8 @@ public class Main extends Plugin {
         }
         if (!byteCode.has("crl")) {
             data = new JSONObject();
-            data.put("commands", 3);
-            data.put("timeFrame", 5);
+            data.put("commands", 4);
+            data.put("timeFrame", 10);
             byteCode.make("crl", data);
         }
         data = byteCode.get("async");
@@ -67,9 +67,9 @@ public class Main extends Plugin {
                 if (!list.containsKey(event.player.uuid)) list.put(event.player.uuid, 1);
                 list.put(event.player.uuid, list.get(event.player.uuid)+1);
                 if (list.get(event.player.uuid) > data.getInt("commands")) {
-                    if (list.get(event.player.uuid) > data.getInt("commands")+3) {
+                    if (list.get(event.player.uuid) > data.getInt("commands")+2) {
                         event.player.con.kick("Spamming commands");
-                    } else if (list.get(event.player.uuid) > data.getInt("commands")+2) {
+                    } else if (list.get(event.player.uuid) > data.getInt("commands")+1) {
                         event.player.sendMessage("[scarlet]Command rate exceeded! Stop using commands so fast");
                     } else if (list.get(event.player.uuid) > data.getInt("commands")) {
                         event.player.sendMessage("[yellow]Command rate exceeded! Stop using commands so fast");
@@ -82,8 +82,8 @@ public class Main extends Plugin {
     public void registerServerCommands(CommandHandler handler) {
         handler.register("crl-clear", "generates the default async.cn file", arg -> {
             data = new JSONObject();
-            data.put("commands", 3);
-            data.put("timeFrame", 5);
+            data.put("commands", 4);
+            data.put("timeFrame", 10);
             if (byteCode.save("crl", data) != null) Log.info("Successfully created " + System.getProperty("user.home") + "/mind_db/crl.cn");
         });
     }

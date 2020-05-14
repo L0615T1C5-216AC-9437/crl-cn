@@ -34,14 +34,14 @@ public class cycle extends Thread {
                 if (!data.has("timeFrame")) byteCode.putInt("crl", "timeFrame", 5);
                 if (!data.has("commands")) byteCode.putInt("crl", "commands", 3);
                 try {
-                    TimeUnit.SECONDS.sleep(5/3);
+                    TimeUnit.SECONDS.sleep(10/4);
                 } catch (Exception e) {
                 }
             }
             ///sleep
             Main.list.forEach((k,v) -> {
                 if (v > 0) {
-                    --v;
+                    Main.list.put(k, v-1);
                 }
             });
         }
