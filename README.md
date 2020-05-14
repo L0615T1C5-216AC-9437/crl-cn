@@ -2,7 +2,7 @@
 ### Description
 command rate limit.  
 Limits how many commands can be used every x seconds.  
-default: (3 commands every 5 seconds)
+default: (4 commands every 10 seconds)
 ### Downloading a Jar
 1) go to [releases](https://github.com/L0615T1C5-216AC-9437/crl-cn/releases) and download latest version, (not recommended to use pre-releases)
 2) follow [#Installing](https://github.com/L0615T1C5-216AC-9437/crl-cn/blob/master/README.md#installing)
