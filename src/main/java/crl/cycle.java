@@ -39,11 +39,13 @@ public class cycle extends Thread {
                 }
             }
             ///sleep
-            Main.list.forEach((k,v) -> {
-                if (v > 0) {
-                    Main.list.put(k, v-1);
-                }
-            });
+            if (!Main.list.isEmpty()) {
+                Main.list.forEach((k,v) -> {
+                    if (v > 0) {
+                        Main.list.put(k, v-1);
+                    }
+                });
+            }
         }
         Log.warn(">>> crl cycle stopped!");
     }
