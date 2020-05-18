@@ -65,7 +65,7 @@ public class Main extends Plugin {
             data = byteCode.get("crl");
             if (event.message.startsWith("/")) {
                 if (!list.containsKey(event.player.uuid)) list.put(event.player.uuid, 1);
-                list.put(event.player.uuid, list.get(event.player.uuid)+1);
+                if (!event.player.isAdmin) list.put(event.player.uuid, list.get(event.player.uuid)+1);
                 if (list.get(event.player.uuid) > data.getInt("commands")) {
                     if (list.get(event.player.uuid) > data.getInt("commands")+2) {
                         event.player.con.kick("Spamming commands");
